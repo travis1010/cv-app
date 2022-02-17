@@ -76,6 +76,7 @@
   height: 24px;
   background-color: rgb(199, 199, 199);
   align-items: center;
+  margin-top: 30px;
 }
 
 .small-banner h3 {
@@ -98,6 +99,7 @@
 
 .left-side-item svg {
   margin-right: 10px;
+  margin-left: 2px;
 }
 
 p {
@@ -105,4 +107,18 @@ p {
   font-size: 14px;
   text-align: justify;
   text-justify: inter-word;
+}
+
+.education-item {
+  margin: 0px 0px 0px 42px;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.degree {
+  margin: 12px 0px 0px 42px;
+  font-weight: 700;
+  font-size: 14px;
 }
