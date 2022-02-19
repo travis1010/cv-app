@@ -14,7 +14,7 @@ class EducationForm extends React.Component {
     const eduArr = this.props.education;
     return (
       <div>
-        <h2>Education <button onClick={this.props.addEduForm}>Add</button></h2>
+        <h2>Education <button className="add-btn" onClick={this.props.addEduForm}>Add</button></h2>
 
         {eduArr.map((edItem, index) => (
           <form className="education-form" key={edItem.id}>

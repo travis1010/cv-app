@@ -16,21 +16,20 @@ class SkillsForm extends React.Component {
     return (
       <div>
         <h2>Skills</h2>
-        <form className="skill-form" onSubmit={this.props.addSkill}>
-          <div className="form-item">
-            <label htmlFor="skill">Skill</label>
-            <span><input type="text" id="skill-input" /><button type="submit">Add</button></span>
-          </div>
-        </form>
-        {
-          skills.map((skill, index) => (
-            <div className="skill-item" key={skill.id}>
-              {skill.name} <button onClick={this.props.deleteSkill} data-index={index}>Delete</button>
+        <div className="skill-form">
+          <form onSubmit={this.props.addSkill}>
+            <div className="form-item">
+              <span><input type="text" id="skill-input" required/><button type="submit" className="add-btn">Add</button></span>
             </div>
-          ))
-        }
-        
-
+          </form>
+          {
+            skills.map((skill, index) => (
+              <div className="skill-item" key={skill.id}>
+                {skill.name} <button onClick={this.props.deleteSkill} data-index={index}>Delete</button>
+              </div>
+            ))
+          }
+        </div>
         
       </div>
     );

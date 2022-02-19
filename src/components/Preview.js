@@ -13,7 +13,7 @@ class Preview extends React.Component {
         <div className="preview-page">
           <div className="left-side">
             <div className="image-container">
-              <img src={avatar} />
+              <img src={this.props.props.imgsrc || avatar} />
             </div>
             <div className="small-banner">
               <div className="gold-tab"></div>
@@ -50,10 +50,10 @@ class Preview extends React.Component {
               this.props.props.education.map((edItem) => (
                 <div className="education-container" key={edItem.id}>
                   <div className="degree">
-                    {edItem.degree}
+                    {capitalizeWords(edItem.degree)}
                   </div>
                   <div className="education-item">
-                    {edItem.school}
+                    {capitalizeWords(edItem.school)}
                   </div>
 
                   <div className="education-item">
@@ -85,7 +85,7 @@ class Preview extends React.Component {
                 <div className="gold-tab"></div>
                 <div className="name-container">
                   <h1 className="name">{this.props.props.firstName.toUpperCase()}&nbsp;{this.props.props.lastName.toUpperCase()}</h1>
-                  <div className="profession">{this.props.props.profession}</div>
+                  <div className="profession">{capitalizeWords(this.props.props.profession)}</div>
                 </div>
               </div>
 
@@ -103,15 +103,33 @@ class Preview extends React.Component {
               {
                 this.props.props.experience.map((job) => (
                   <div key={job.id}>
-                    {job.title}
+                    <div className="job-title">
+                      <b>{capitalizeWords(job.title)}</b> {capitalizeWords(job.company)}
+                    </div>
+                    <div className="experience-item">
+                      {job.yearStart} - {job.yearEnd}
+                    </div>
+                    <p className="job-description">{job.description}</p>
                   </div>
                 ))
               }
           </div>
         </div>
+        <button className="pdf-btn" onClick={this.props.savePDF}> Save PDF</button>
       </div>
     )
   }
+}
+
+function capitalizeWords(str) {
+  if(str === undefined || str === '' || str === null) return str;
+  const words = str.split(" ");
+  return words.map((word, i) => { 
+      if(i !== 0 && (word.match(/^(a|an|the|for|and|nor|but|or|yet|so|at|around|after|by|along|from|of|on|in|with|without)$/i) || word === '')) {
+        return word.toLowerCase();
+      }
+      return word[0].toUpperCase() + word.substring(1).toLowerCase(); 
+  }).join(" ");
 }
 
 export default Preview;
