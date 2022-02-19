@@ -1,3 +1,4 @@
+
 .preview-section {
   height: 100%;
   width: 720px;
@@ -5,16 +6,23 @@
   flex-direction: column;
   align-items: center;
   font-family: 'Roboto', sans-serif;
+  
+}
+
+h1 {
+  font-size: 72px;
 }
 
 .preview-page {
-  width: 680px;
-  height: 880px;
+  width: 1360px;
+  height: 1760px;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  box-shadow: 0px 0px 7px black;
+  box-shadow: 0px 0px 14px black;
   margin: 0px;
   padding: 0px;
+  transform: scale(0.5);
+  transform-origin: top;
 }
 
 .left-side {
@@ -25,22 +33,22 @@
 .gold-tab {
   background-color: gold;
   height: 100%;
-  width: 10px
+  width: 40px
 }
 
 .image-container {
   width: 100%;
-  height: 140px;
-  margin: 30px 0px;
+  height: 280px;
+  margin: 60px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .image-container img {
-  width: 130px;
-  height: 130px;
-  border: 4px solid gold;
+  width: 260px;
+  height: 260px;
+  border: 8px solid gold;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -51,13 +59,13 @@
 
 .name-banner {
   background-color: rgb(199, 199, 199);
-  margin: 30px 0px;
-  height: 140px;
+  margin: 60px 0px;
+  height: 280px;
   display: flex;
 }
 
 .name-container {
-  padding: 0px 30px;
+  padding: 0px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,22 +77,22 @@
 
 .profession {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 32px;
 }
 
 .small-banner {
   width: 100%;
   display: flex;
-  height: 24px;
+  height: 48px;
   background-color: rgb(199, 199, 199);
   align-items: center;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 .small-banner h3 {
   padding-left: 30px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 32px;
 }
 
 .left-side .small-banner {
@@ -92,58 +100,58 @@
 }
 
 .left-side-item {
-  margin: 12px;
+  margin: 24px;
   display: flex;
   align-items: center;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 28px;
 }
 
 .left-side-item svg {
-  margin-right: 10px;
-  margin-left: 2px;
+  margin-right: 20px;
+  margin-left: 4px;
 }
 
 p {
-  margin: 12px 40px;
-  font-size: 14px;
+  margin: 24px 80px;
+  font-size: 28px;
   text-align: justify;
   text-justify: inter-word;
 }
 
 .education-item {
-  margin: 0px 0px 0px 42px;
+  margin: 0px 0px 0px 84px;
   display: flex;
   align-items: center;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 28px;
 }
 
 .degree {
-  margin: 12px 0px 0px 42px;
+  margin: 24px 0px 0px 84px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 28px;
 }
 
 .job-title {
-  margin: 12px 0px 0px 40px;
-  font-size: 14px;
+  margin: 24px 0px 0px 80px;
+  font-size: 28px;
 }
 
 .job-description {
-  margin: 0px 40px;
-  font-size: 14px;
+  margin: 0px 80px;
+  font-size: 28px;
   text-align: justify;
   text-justify: inter-word;
 }
 
 
 .experience-item {
-  margin: 0px 0px 0px 40px;
+  margin: 0px 0px 0px 80px;
   display: flex;
   align-items: center;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 28px;
 }
 
 .pdf-btn {
@@ -152,14 +160,15 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(-90deg, #004d8b, #001a30);
+  background: linear-gradient(-90deg, #004d8b, #002546);
   border: 1px solid black;
   border-radius: 5px;
   color: white;
   margin-left: 20px;
   margin-top: 10px;
+  transform: translateY(-880px);
 }
 
 .zoom {
-  zoom: 200%;
+  transform: scale(1.0);
 }

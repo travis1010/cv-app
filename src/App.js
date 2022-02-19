@@ -138,20 +138,25 @@ class App extends React.Component {
     const doc = new jsPDF({
       orientation: 'p',
       unit: 'px',
-      format: [680, 880],
+      format: [1360, 1760],
       hotfixes: ['px_scaling'],
     });
+    
+    const preview = document.querySelector('.preview-page');
+    preview.classList.add('zoom');
 
-    html2canvas(document.querySelector('.preview-page'), {
-      width: 680,
-      height: 880,
+    html2canvas(preview, {
+      width: 1360,
+      height: 1760,
       scrollX: -window.scrollX,
       scrollY: -window.scrollY,
-      scale: 2
+      scale: 2,
+      //allowTaint: true
     }).then((canvas) => {
       const img = canvas.toDataURL("image/png");
-      doc.addImage(img, "PNG", 0, 0, 680, 880);
+      doc.addImage(img, "PNG", 0, 0, 1360, 1760);
       doc.save("myCV.pdf");
+      preview.classList.remove('zoom');
     })
 
   }
