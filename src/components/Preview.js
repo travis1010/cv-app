@@ -12,8 +12,8 @@ class Preview extends React.Component {
       <div className="preview-section">
         <div className="preview-page">
           <div className="left-side">
-            <div className="image-container">
-              <img src={this.props.props.imgsrc || avatar}/>
+            <div className="image-container" crossOrigin="anonymous">
+              <img src={this.props.props.imgsrc || avatar} />
             </div>
             <div className="small-banner">
               <div className="gold-tab"></div>
