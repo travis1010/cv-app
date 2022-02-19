@@ -51,12 +51,14 @@ class App extends React.Component {
     });
   }
 
+
   submitImg(e) {
     e.preventDefault();
-    this.setState({
-      imgsrc: document.getElementById('imgsrc').value
-    });
+    let imageURL = document.getElementById('imgsrc').value;
+    document.getElementById('avatar').src = imageURL;
   }
+
+
 
   onChangeEdu(e) {
     const index = e.target.getAttribute('data-index');
@@ -151,7 +153,6 @@ class App extends React.Component {
       scrollX: -window.scrollX,
       scrollY: -window.scrollY,
       scale: 2,
-      allowTaint: true
     }).then((canvas) => {
       const img = canvas.toDataURL("image/png");
       doc.addImage(img, "PNG", 0, 0, 1360, 1760);

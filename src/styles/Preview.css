@@ -108,8 +108,8 @@ h1 {
 }
 
 .left-side-item svg {
-  margin-right: 20px;
-  margin-left: 4px;
+  margin-right: 18px;
+  margin-left: 0px;
 }
 
 p {
@@ -120,7 +120,7 @@ p {
 }
 
 .education-item {
-  margin: 0px 0px 0px 84px;
+  margin: 0px 0px 0px 72px;
   display: flex;
   align-items: center;
   font-weight: 300;
@@ -128,7 +128,7 @@ p {
 }
 
 .degree {
-  margin: 24px 0px 0px 84px;
+  margin: 24px 0px 0px 72px;
   font-weight: 700;
   font-size: 28px;
 }
