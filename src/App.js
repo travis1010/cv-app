@@ -151,8 +151,7 @@ class App extends React.Component {
       scrollX: -window.scrollX,
       scrollY: -window.scrollY,
       scale: 2,
-      allowTaint: true,
-      foreignObjectRendering: true
+      allowTaint: true
     }).then((canvas) => {
       const img = canvas.toDataURL("image/png");
       doc.addImage(img, "PNG", 0, 0, 1360, 1760);
