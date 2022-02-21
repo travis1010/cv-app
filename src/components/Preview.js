@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/Preview.css'
-import avatar from '../assets/anonymous_man.jpg'
+import avatar from '.././assets/anonymous_man.jpg'
 
 class Preview extends React.Component {
   constructor(props) {

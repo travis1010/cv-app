@@ -7,7 +7,7 @@ import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 import * as filestack from 'filestack-js';
 import axios from "axios";
-import {useEffect} from 'react'
+
 
 
 class App extends React.Component {
@@ -57,11 +57,11 @@ class App extends React.Component {
 
 
 
-  submitImg(e) {
-    fetch('.netlify/functions/getapi​').then((res) => console.log(res))
+  async submitImg(e) {
+    
+    const client = filestack.init(process.env.REACT_APP_API_KEY);
 
-    /*
-    const client = filestack.init(API KEY GOES HERE);
+    
     const options = {
       onUploadDone: file => {
         console.log(file);
@@ -77,7 +77,9 @@ class App extends React.Component {
       maxFiles: 1,
       
     }
-    client.picker(options).open(); */
+
+    client.picker(options).open();
+    
   }
 
   onChangeEdu(e) {
