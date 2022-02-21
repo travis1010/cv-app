@@ -8,12 +8,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(62, 139, 116);
+  background: linear-gradient(-90deg, #004d8b, #002546);
   border: 1px solid black;
   border-radius: 5px;
   color: white;
   margin-left: 20px;
 }
+
 
 h2 {
   display: flex;

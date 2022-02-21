@@ -26,7 +26,7 @@ h2 {
   width: 60px;
   align-items: center;
   justify-content: center;
-  background-color: rgb(153, 66, 66);
+  background: linear-gradient(-90deg, #8b0000, #460000);
   border: 1px solid black;
   border-radius: 5px;
   color: white;
@@ -38,7 +38,7 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(62, 139, 116);
+  background: linear-gradient(-90deg, #004d8b, #002546);
   border: 1px solid black;
   border-radius: 5px;
   color: white;

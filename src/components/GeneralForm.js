@@ -1,6 +1,7 @@
 import React from "react";
 import '../styles/GeneralForm.css'
 
+
 class GeneralForm extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +12,7 @@ class GeneralForm extends React.Component {
     return (
       <div>
         <h2>General Info </h2>
-        <form className="general-form" onSubmit={this.props.submitImg}>
+        <form className="general-form" >
           <div className="form-item">
             <label htmlFor="firstName">First Name</label>
             <input id="firstName" type="text" onChange={this.props.onChange} />
@@ -40,12 +41,9 @@ class GeneralForm extends React.Component {
             <label htmlFor="about">About Me</label>
             <textarea id="about" onChange={this.props.onChange} rows='7' />
           </div>
-          <div className="form-item img-item">
-            <label htmlFor="imgsrc">Image URL</label>
-            <div className="img-submit">
-              <input id="imgsrc" type="text"/>
-              <button type="submit" className="img-btn">Submit</button>
-            </div>
+          <div className="img-item">
+            <button type="button" className="img-btn" onClick={this.props.submitImg}>Upload Image</button> 
+            <span id="image-file-name">No Image Loaded</span>
           </div>
         
         </form>

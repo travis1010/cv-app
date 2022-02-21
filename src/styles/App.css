@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(rgb(163, 216, 236), rgb(154, 197, 172));
-  padding: 10px;
+  background: linear-gradient(rgb(231, 231, 231), rgb(179, 179, 179));
+  padding: 0px;
 }
 
 .app {
@@ -14,4 +14,5 @@ body {
   display: flex;
   justify-content: center;
 }
+
 

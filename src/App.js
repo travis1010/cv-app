@@ -5,6 +5,10 @@ import Preview from "./components/Preview";
 import uniqid from "uniqid";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
+import * as filestack from 'filestack-js';
+import axios from "axios";
+import {useEffect} from 'react'
+
 
 class App extends React.Component {
   constructor() {
@@ -52,13 +56,29 @@ class App extends React.Component {
   }
 
 
+
   submitImg(e) {
-    e.preventDefault();
-    let imageURL = document.getElementById('imgsrc').value;
-    document.getElementById('avatar').src = imageURL;
+    fetch('.netlify/functions/getapi​').then((res) => console.log(res))
+
+    /*
+    const client = filestack.init(API KEY GOES HERE);
+    const options = {
+      onUploadDone: file => {
+        console.log(file);
+        document.getElementById('avatar').src = file.filesUploaded[0].url;
+        document.getElementById('image-file-name').textContent = file.filesUploaded[0].filename;
+      },
+      onFileSelected: file => {
+        if (file.size > 10000 * 1000) {
+            throw new Error('File too big, select something smaller than 10MB');
+        }
+      },
+      accept: "image/*",
+      maxFiles: 1,
+      
+    }
+    client.picker(options).open(); */
   }
-
-
 
   onChangeEdu(e) {
     const index = e.target.getAttribute('data-index');
@@ -145,19 +165,23 @@ class App extends React.Component {
     });
     
     const preview = document.querySelector('.preview-page');
-    preview.classList.add('zoom');
-
+    document.getElementById('loading').style.display = "flex";
+    preview.style.transform = "translateY(-4000px) translateX(-4000px";
     html2canvas(preview, {
       width: 1360,
       height: 1760,
       scrollX: -window.scrollX,
       scrollY: -window.scrollY,
       scale: 2,
+      allowTaint: true,
+      useCORS: true
     }).then((canvas) => {
       const img = canvas.toDataURL("image/png");
       doc.addImage(img, "PNG", 0, 0, 1360, 1760);
       doc.save("myCV.pdf");
-      preview.classList.remove('zoom');
+      preview.style.transform = "scale(0.5)";
+      document.getElementById('loading').style.display = "none";
+      
     })
 
   }
@@ -169,6 +193,7 @@ class App extends React.Component {
         addSkill={this.addSkill} deleteSkill={this.deleteSkill} onChangeExp={this.onChangeExp} addExpForm={this.addExpForm} deleteExpForm={this.deleteExpForm}
         submitImg={this.submitImg} />
         <Preview props={this.state} savePDF={this.savePDF} />
+        
       </div>
     )
   }

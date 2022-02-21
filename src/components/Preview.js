@@ -10,10 +10,12 @@ class Preview extends React.Component {
   render() {
     return (
       <div className="preview-section">
+        <div id="loading" >GENERATING PDF...</div>
+        <button className="pdf-btn" onClick={this.props.savePDF}>Save PDF</button>
         <div className="preview-page">
           <div className="left-side">
             <div className="image-container">
-              <img id="avatar" src={avatar} />
+              <img id="avatar" src={this.props.props.imgsrc || avatar} crossOrigin="anonymous" />
             </div>
             <div className="small-banner">
               <div className="gold-tab"></div>
@@ -115,7 +117,7 @@ class Preview extends React.Component {
               }
           </div>
         </div>
-        <button className="pdf-btn" onClick={this.props.savePDF}> Save PDF</button>
+        
       </div>
     )
   }

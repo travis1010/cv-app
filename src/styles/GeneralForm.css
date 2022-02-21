@@ -41,27 +41,28 @@ input, textarea {
 
 }
 
-.img-submit {
-  display: flex;
-}
-
-.img-submit input {
-  margin-right: 20px;
-  align-items: center;
-}
-
 .img-item {
-  grid-column: 1 / 3
+  grid-column: 1 / 3;
+  display: flex;
+  align-items: center;
+  
 }
 
-.img-item button {
+.img-item span {
+  margin-left: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.img-btn {
   height: 24px;
-  width: 60px;
+  width: 100px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(62, 139, 116);
+  background: linear-gradient(-90deg, #004d8b, #002546);
   border: 1px solid black;
   border-radius: 5px;
   color: white;
+  flex-shrink: 0;
 }
-

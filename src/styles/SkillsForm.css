@@ -21,7 +21,7 @@
   width: 60px;
   align-items: center;
   justify-content: center;
-  background-color: rgb(153, 66, 66);
+  background: linear-gradient(-90deg, #8b0000, #460000);
   border: 1px solid black;
   border-radius: 5px;
   color: white;
